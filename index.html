@@ -1251,6 +1251,23 @@
             border: 1px solid var(--card-border);
         }
 
+        .online-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-left: 6px;
+            background: #4a5278;
+            transition: 0.3s;
+        }
+        .online-dot.online {
+            background: var(--success);
+            box-shadow: 0 0 12px var(--success);
+        }
+        .online-dot.offline {
+            background: #4a5278;
+        }
+
         /* ━━━ QUESTS, LEADERBOARD, ACHIEVEMENTS ━━━ */
         .quest-grid {
             display: grid;
@@ -1928,6 +1945,10 @@
                 font-size: 11px;
                 padding: 4px 10px;
             }
+            .online-dot {
+                width: 8px;
+                height: 8px;
+            }
         }
         @media (max-width: 480px) {
             :root {
@@ -2113,6 +2134,187 @@
                 padding: 2px 10px;
                 align-self: center;
             }
+            .online-dot {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        /* ━━━ BUTTON SIZE: HALF OF PREVIOUS 1.8× ━━━ */
+        button,
+        .auth-btn,
+        .buy-btn,
+        .select-btn,
+        .friend-btn,
+        .remove-btn,
+        .add-btn,
+        .accept-btn,
+        .decline-btn,
+        .copy-btn,
+        .modal-content button:not(.modal-close),
+        .game-overlay button,
+        .game-back-btn,
+        .nav-links button,
+        .nav-logout,
+        .party-invite button,
+        .party-leave-btn,
+        .hangout-chat .input-row button,
+        .voice-controls button,
+        .peer-connect .row button,
+        .auth-tabs button,
+        .shop-item .buy-btn,
+        .shop-item .select-btn,
+        #challenge-btn,
+        #find-user-btn,
+        #party-invite-btn,
+        #party-leave-btn,
+        #party-chat-send,
+        #hangout-send,
+        #voice-toggle,
+        .lobby-modal .modal-content .btn-group button,
+        .profile-modal .friend-btn,
+        .purchase-modal .btn-group button {
+            font-size: 0.9em !important;
+            padding: 0.25em 0.6em !important;
+        }
+        .nav-links button {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.4em !important;
+        }
+        .nav-logout {
+            font-size: 0.9em !important;
+            padding: 0.1em 0.3em !important;
+        }
+        .auth-tabs button {
+            font-size: 0.9em !important;
+            padding: 0.2em 0.4em !important;
+        }
+        .game-back-btn {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.4em !important;
+        }
+        .voice-controls button {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.4em !important;
+        }
+        .shop-item .buy-btn,
+        .shop-item .select-btn {
+            font-size: 0.9em !important;
+            padding: 0.1em 0.4em !important;
+        }
+        .friend-item .remove-btn,
+        .user-item .add-btn,
+        .inbox-item .accept-btn,
+        .inbox-item .decline-btn {
+            font-size: 0.9em !important;
+            padding: 0.05em 0.3em !important;
+        }
+        .modal-close {
+            font-size: 0.9em !important;
+            padding: 0.05em 0.2em !important;
+        }
+        .game-overlay button {
+            font-size: 0.9em !important;
+            padding: 0.25em 0.75em !important;
+        }
+        .auth-btn {
+            font-size: 0.9em !important;
+            padding: 0.3em 0.75em !important;
+        }
+        #challenge-btn {
+            font-size: 0.9em !important;
+            padding: 0.2em 0.6em !important;
+        }
+        .party-invite button {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.5em !important;
+        }
+        #hangout-send {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.5em !important;
+        }
+        .peer-connect .row button {
+            font-size: 0.9em !important;
+            padding: 0.15em 0.5em !important;
+        }
+        .lobby-modal .modal-content .btn-group button {
+            font-size: 0.9em !important;
+            padding: 0.2em 0.6em !important;
+        }
+        .profile-modal .friend-btn {
+            font-size: 0.9em !important;
+            padding: 0.25em 0.75em !important;
+        }
+        .purchase-modal .btn-group button {
+            font-size: 0.9em !important;
+            padding: 0.2em 0.6em !important;
+        }
+        .profile-card .profile-peer-id .copy-btn {
+            font-size: 0.9em !important;
+            padding: 0.05em 0.4em !important;
+        }
+        input,
+        select,
+        textarea {
+            font-size: 1em !important;
+        }
+
+        /* ━━━ NEW: Peer refresh / status ━━━ */
+        .peer-status-badge {
+            display: inline-block;
+            padding: 0.15em 0.6em;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        .peer-status-badge.online {
+            background: var(--success)33;
+            color: var(--success);
+            border: 1px solid var(--success)44;
+        }
+        .peer-status-badge.offline {
+            background: var(--danger)33;
+            color: var(--danger);
+            border: 1px solid var(--danger)44;
+        }
+        .peer-status-badge.loading {
+            background: var(--warning)33;
+            color: var(--warning);
+            border: 1px solid var(--warning)44;
+            animation: pulse 1s infinite;
+        }
+        #peer-refresh-btn {
+            padding: 0.1em 0.6em !important;
+            font-size: 0.8em !important;
+            border-radius: 8px;
+            border: none;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        #peer-refresh-btn:hover {
+            background: var(--accent)33;
+        }
+        .peer-id-display .peer-id-copy-icon {
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.2s;
+        }
+        .peer-id-display .peer-id-copy-icon:hover {
+            opacity: 1;
+        }
+        .peer-retry-area {
+            margin-top: 4px;
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .peer-retry-area button {
+            padding: 0.1em 0.8em !important;
+            font-size: 0.8em !important;
         }
     </style>
 </head>
@@ -2299,8 +2501,14 @@
                         <button id="peer-connect-btn">Connect</button>
                         <button id="peer-copy-id-btn" style="background:var(--bg-card);color:var(--text-primary);">📋 Copy My ID</button>
                     </div>
-                    <div class="peer-id-display" id="peer-id-display">Loading Peer ID...</div>
-                    <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;" id="peer-connection-status">Disconnected</div>
+                    <div class="peer-id-display" id="peer-id-display">
+                        <span>📡 Loading Peer ID...</span>
+                        <span class="peer-status-badge loading" id="peer-status-badge">Connecting</span>
+                        <button id="peer-refresh-btn" style="margin-left:8px;">⟳ Refresh</button>
+                    </div>
+                    <div class="peer-retry-area">
+                        <span style="font-size:11px;color:var(--text-secondary);" id="peer-connection-status">Initializing...</span>
+                    </div>
                 </div>
                 <div style="margin-top:12px;background:var(--bg-card);backdrop-filter:blur(6px);border-radius:20px;padding:clamp(10px,1vw,16px);border:1px solid var(--card-border);">
                     <h3 style="margin-bottom:4px;">⚔️ Friend Duel</h3>
@@ -2488,7 +2696,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  THEMES (same as before)
+        //  THEMES
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         const THEMES = [{
             id: 'default',
@@ -2577,7 +2785,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  EMOJI LIST (shortened for brevity – full list in original)
+        //  EMOJI LIST
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         const EMOJIS = [
             { emoji: '😀', label: 'Grin', cost: 0 }, { emoji: '😁', label: 'Beam', cost: 0 },
@@ -2701,7 +2909,7 @@
         ];
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  DATA STORE (localStorage)
+        //  DATA STORE
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         const DEFAULT_AVATAR = {
             character: '😀',
@@ -2711,7 +2919,6 @@
             purchasedThemes: ['default']
         };
 
-        // ─── GAMES LIST (same as original, shortened for brevity) ───
         const GAMES = [
             { id: 'star-collector', name: '⭐ Star Collector', desc: 'Click stars before they fade!', emoji: '⭐',
                 color: '#fbbf24', multiplayer: false, new: false, cost: 0 },
@@ -2813,7 +3020,6 @@
                 color: '#8b5cf6', multiplayer: false, new: true, cost: 1000 },
         ];
 
-        // ─── ACHIEVEMENTS ───
         const ACHIEVEMENTS = [
             { id: 'first_game', name: 'Welcome!', desc: 'Play your first game', icon: '🎮', check: d => d.gamesPlayed >=
                     1 },
@@ -3092,29 +3298,80 @@
         function setPeerId(n, id) { updateUserData(n, { peerId: id }); }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  PEER JS – GLOBAL FRIENDS & LEADERBOARD
+        //  PEER JS – with robust retry & refresh
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         let peer = null;
-        let peerConnections = {}; // peerId -> connection
-        let peerData = {}; // peerId -> { username, scores, level, friends, ... }
+        let peerConnections = {};
+        let peerData = {};
         let myPeerId = null;
         let isPeerReady = false;
+        let peerInitAttempts = 0;
+        const MAX_PEER_INIT_ATTEMPTS = 5;
+        let peerInitTimer = null;
 
-        function initPeerJS() {
+        function isUserOnline(username) {
+            for (const pid in peerData) {
+                if (peerData[pid].username === username) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function updatePeerStatus(status, message) {
+            const badge = document.getElementById('peer-status-badge');
+            const statusEl = document.getElementById('peer-connection-status');
+            if (badge) {
+                badge.className = 'peer-status-badge ' + status;
+                badge.textContent = message || status;
+            }
+            if (statusEl) statusEl.textContent = message || status;
+        }
+
+        function initPeerJS(forceNew = false) {
             const user = getCurrentUser();
-            if (!user) return;
-            const existingId = getPeerId(user.username);
-            if (peer) { try { peer.destroy(); } catch (e) {} }
-            peer = new Peer(existingId || undefined, { config: { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] } });
+            if (!user) { updatePeerStatus('offline', 'Not logged in'); return; }
+
+            if (peer && !forceNew) {
+                if (peer.open && myPeerId) {
+                    updatePeerStatus('online', '✅ Connected');
+                    return;
+                }
+                try { peer.destroy(); } catch (e) {}
+                peer = null;
+            }
+
+            if (peerInitTimer) { clearTimeout(peerInitTimer);
+                peerInitTimer = null; }
+
+            const existingId = forceNew ? undefined : (getPeerId(user.username) || undefined);
+            updatePeerStatus('loading', '⏳ Connecting...');
+
+            try {
+                peer = new Peer(existingId, {
+                    config: { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] },
+                    debug: 0
+                });
+            } catch (e) {
+                updatePeerStatus('offline', '❌ Error: ' + e.message);
+                scheduleRetry();
+                return;
+            }
+
+            let peerOpened = false;
+
             peer.on('open', (id) => {
+                peerOpened = true;
                 myPeerId = id;
                 setPeerId(user.username, id);
-                document.getElementById('peer-id-display').textContent = `📡 Your Peer ID: ${id}`;
-                document.getElementById('peer-connection-status').textContent = '✅ Online — share your ID to connect!';
+                updatePeerStatus('online', '✅ Online');
+                document.getElementById('peer-id-display').innerHTML =
+                    `📡 Your Peer ID: <strong style="color:var(--accent);">${id}</strong> <span class="peer-status-badge online">Online</span> <button id="peer-refresh-btn" style="margin-left:8px;">⟳ Refresh</button>`;
                 isPeerReady = true;
-                // Re-render profile to show the Peer ID
                 renderProfile();
-                // Load any existing peer data from localStorage
+                document.getElementById('peer-refresh-btn')?.addEventListener('click', () => {
+                    initPeerJS(true);
+                });
                 const stored = localStorage.getItem('bw_peer_data');
                 if (stored) {
                     try {
@@ -3123,33 +3380,80 @@
                         renderLeaderboard('stars');
                     } catch (e) {}
                 }
+                peerInitAttempts = 0;
+                document.querySelector('#profile-copy-peer-id')?.addEventListener('click', () => {
+                    const pid = myPeerId || getPeerId(user.username) || '';
+                    if (pid) navigator.clipboard.writeText(pid).then(() => showToast('📋 Peer ID copied!'))
+                        .catch(() => showToast('Peer ID: ' + pid));
+                });
+                showToast('🔗 Peer ID ready — share it to connect!');
             });
+
             peer.on('connection', (conn) => {
                 setupPeerConnection(conn);
             });
+
             peer.on('error', (err) => {
                 console.warn('Peer error:', err);
                 if (err.message && err.message.includes('ID taken')) {
-                    // Try with a new ID
-                    peer.destroy();
-                    peer = new Peer(undefined, { config: { 'iceServers': [{ 'urls': 'stun:stun.l.google.com:19302' }] } });
-                    peer.on('open', (id) => {
-                        myPeerId = id;
-                        setPeerId(user.username, id);
-                        document.getElementById('peer-id-display').textContent = `📡 Your Peer ID: ${id}`;
-                        isPeerReady = true;
-                        renderProfile();
-                    });
-                    peer.on('connection', (conn) => { setupPeerConnection(conn); });
+                    if (peer) try { peer.destroy(); } catch (e) {}
+                    peer = null;
+                    const storedId = getPeerId(user.username);
+                    if (storedId) {
+                        setPeerId(user.username, null);
+                        initPeerJS(true);
+                    } else {
+                        scheduleRetry();
+                    }
+                } else if (err.message && err.message.includes('Server')) {
+                    updatePeerStatus('offline', '⚠️ Server unavailable — retrying...');
+                    scheduleRetry();
                 } else {
-                    document.getElementById('peer-connection-status').textContent = '⚠️ Peer error: ' + err.message;
+                    updatePeerStatus('offline', '⚠️ ' + err.message);
+                    scheduleRetry();
                 }
             });
-            // Auto-reconnect on close
+
             peer.on('close', () => {
-                isPeerReady = false;
-                document.getElementById('peer-connection-status').textContent = '🔌 Disconnected — reload to reconnect';
+                if (!peerOpened) {
+                    updatePeerStatus('offline', '🔌 Connection closed');
+                    scheduleRetry();
+                } else {
+                    isPeerReady = false;
+                    updatePeerStatus('offline', '🔌 Disconnected');
+                    scheduleRetry();
+                }
             });
+
+            setTimeout(() => {
+                if (!peerOpened && peer) {
+                    updatePeerStatus('offline', '⏱️ Timeout — retrying...');
+                    try { peer.destroy(); } catch (e) {}
+                    peer = null;
+                    scheduleRetry();
+                }
+            }, 10000);
+        }
+
+        function scheduleRetry() {
+            if (peerInitTimer) return;
+            if (peerInitAttempts >= MAX_PEER_INIT_ATTEMPTS) {
+                updatePeerStatus('offline', '❌ Max retries. Click Refresh to try again.');
+                document.getElementById('peer-id-display').innerHTML =
+                    `📡 Peer ID: <span style="color:var(--danger);">Failed to connect</span> <button id="peer-refresh-btn" style="margin-left:8px;">⟳ Retry</button>`;
+                document.getElementById('peer-refresh-btn')?.addEventListener('click', () => {
+                    peerInitAttempts = 0;
+                    initPeerJS(true);
+                });
+                return;
+            }
+            peerInitAttempts++;
+            const delay = Math.min(2000 * Math.pow(1.5, peerInitAttempts - 1), 15000);
+            updatePeerStatus('loading', `⏳ Retry ${peerInitAttempts}/${MAX_PEER_INIT_ATTEMPTS} in ${(delay/1000).toFixed(1)}s...`);
+            peerInitTimer = setTimeout(() => {
+                peerInitTimer = null;
+                initPeerJS(true);
+            }, delay);
         }
 
         function setupPeerConnection(conn) {
@@ -3158,9 +3462,7 @@
             conn.on('open', () => {
                 const pid = conn.peer;
                 peerConnections[pid] = conn;
-                document.getElementById('peer-connection-status').textContent =
-                    `🔗 Connected to ${pid}`;
-                // Send our info
+                document.getElementById('peer-connection-status').textContent = `🔗 Connected to ${pid}`;
                 const myData = {
                     username: user.username,
                     peerId: myPeerId,
@@ -3171,21 +3473,16 @@
                     totalScore: getTotalScore(user.username),
                 };
                 conn.send({ type: 'handshake', data: myData });
-                // Send any pending friend requests
                 const sent = getSentRequests(user.username);
-                if (sent.length) {
-                    conn.send({ type: 'friend_requests_sent', data: sent });
-                }
+                if (sent.length) conn.send({ type: 'friend_requests_sent', data: sent });
+                const incoming = getFriendRequests(user.username);
+                if (incoming.length) conn.send({ type: 'friend_requests_incoming', data: incoming.map(r => r.from) });
                 showToast(`🔗 Connected to peer ${pid}`);
             });
-            conn.on('data', (data) => {
-                handlePeerData(data, conn);
-            });
+            conn.on('data', (data) => { handlePeerData(data, conn); });
             conn.on('close', () => {
                 delete peerConnections[conn.peer];
-                document.getElementById('peer-connection-status').textContent =
-                    `🔌 Disconnected from ${conn.peer}`;
-                // Remove peer data
+                document.getElementById('peer-connection-status').textContent = `🔌 Disconnected from ${conn.peer}`;
                 delete peerData[conn.peer];
                 renderLeaderboard(currentLeaderboardSort);
             });
@@ -3205,60 +3502,44 @@
                     totalScore: d.totalScore || 0,
                     peerId: d.peerId || conn.peer,
                 };
-                // Store in localStorage for persistence
                 localStorage.setItem('bw_peer_data', JSON.stringify(peerData));
                 renderLeaderboard(currentLeaderboardSort);
-                // Check if we have any pending friend requests for this user
                 const sent = getSentRequests(user.username);
-                if (sent.length) {
-                    conn.send({ type: 'friend_requests_sent', data: sent });
-                }
-                // Also send our friend requests
+                if (sent.length) conn.send({ type: 'friend_requests_sent', data: sent });
                 const incoming = getFriendRequests(user.username);
-                if (incoming.length) {
-                    conn.send({ type: 'friend_requests_incoming', data: incoming.map(r => r.from) });
-                }
+                if (incoming.length) conn.send({ type: 'friend_requests_incoming', data: incoming.map(r => r.from) });
                 showToast(`📡 Synced data from ${d.username}`);
             } else if (data.type === 'friend_request') {
-                // Incoming friend request from peer
                 const from = data.from;
                 const fromUsername = data.username;
                 if (!fromUsername) return;
-                // Check if already friends
                 const friends = getFriends(user.username);
                 if (friends.includes(fromUsername)) {
-                    conn.send({ type: 'friend_request_response', to: from, accepted: true, username: user
-                            .username });
+                    conn.send({ type: 'friend_request_response', to: from, accepted: true, username: user.username });
                     return;
                 }
-                // Check if already requested
                 const reqs = getFriendRequests(user.username);
                 if (reqs.some(r => r.from === fromUsername)) {
-                    conn.send({ type: 'friend_request_response', to: from, accepted: false, username: user
-                            .username, reason: 'already_pending' });
+                    conn.send({ type: 'friend_request_response', to: from, accepted: false, username: user.username,
+                        reason: 'already_pending' });
                     return;
                 }
-                // Add to inbox
                 addFriendRequest(user.username, fromUsername);
                 renderInbox();
                 renderFriends();
                 showToast(`📨 Friend request from ${fromUsername}!`);
-                // Send acknowledgment
                 conn.send({ type: 'friend_request_response', to: from, accepted: true, username: user.username });
             } else if (data.type === 'friend_request_response') {
                 const to = data.to;
                 const accepted = data.accepted;
                 const username = data.username;
                 if (accepted) {
-                    // They accepted! Add them as friend
                     if (addFriend(user.username, username)) {
                         showToast(`🎉 ${username} accepted your friend request!`);
                         renderFriends();
                         renderInbox();
                         updateFriendSelect();
-                        // Remove from sent requests
                         removeSentRequest(user.username, username);
-                        // Broadcast to all peers that we have a new friend
                         broadcastToPeers({ type: 'new_friend', username: user.username, friend: username });
                     }
                 } else {
@@ -3267,30 +3548,28 @@
                     renderInbox();
                 }
             } else if (data.type === 'friend_requests_sent') {
-                // Peer sent us their sent requests — check if any match our incoming
                 const sentList = data.data || [];
                 const user2 = getCurrentUser();
                 if (!user2) return;
-                const ourIncoming = getFriendRequests(user2.username);
                 for (const from of sentList) {
                     if (from === user2.username) {
-                        // This peer sent us a request — we already have it in inbox
-                        // If we accepted, it would be handled elsewhere
+                        if (!getFriends(user2.username).includes(peerData[conn.peer]?.username)) {
+                            const currentReqs = getFriendRequests(user2.username);
+                            if (!currentReqs.some(r => r.from === peerData[conn.peer]?.username)) {
+                                addFriendRequest(user2.username, peerData[conn.peer]?.username);
+                                renderInbox();
+                                renderFriends();
+                            }
+                        }
                     }
                 }
                 renderInbox();
             } else if (data.type === 'friend_requests_incoming') {
-                // Peer has incoming requests — check if we sent any
                 const incomingList = data.data || [];
                 const user2 = getCurrentUser();
                 if (!user2) return;
                 if (incomingList.includes(user2.username)) {
                     // We sent a request to this peer — they have it in inbox
-                    // Check if we already have them as friend
-                    const friends = getFriends(user2.username);
-                    if (!friends.includes(peerData[conn.peer]?.username)) {
-                        // Still pending
-                    }
                 }
             } else if (data.type === 'new_friend') {
                 const friend = data.friend;
@@ -3298,7 +3577,6 @@
                 if (username === user.username) {
                     // We added a friend, sync it
                 } else {
-                    // Another peer added a friend — update our data
                     if (peerData[conn.peer]) {
                         if (!peerData[conn.peer].friends) peerData[conn.peer].friends = [];
                         if (!peerData[conn.peer].friends.includes(friend)) {
@@ -3310,7 +3588,6 @@
                     }
                 }
             } else if (data.type === 'leaderboard_sync') {
-                // Peer sent their full score data
                 const d = data.data;
                 if (d && d.scores) {
                     const peerInfo = peerData[conn.peer] || { username: d.username || 'unknown', scores: {}, level: 1,
@@ -3338,17 +3615,18 @@
         function sendFriendRequestToPeer(username) {
             const user = getCurrentUser();
             if (!user) return;
-            // Check if already friends
             if (getFriends(user.username).includes(username)) {
                 showToast(`You are already friends with ${username}.`);
                 return;
             }
-            // Check if already sent
             if (getSentRequests(user.username).includes(username)) {
                 showToast(`Friend request already sent to ${username}.`);
                 return;
             }
-            // Find which peer has this username
+            addSentRequest(user.username, username);
+            renderInbox();
+            renderFriends();
+
             let targetPeerId = null;
             for (const [pid, data] of Object.entries(peerData)) {
                 if (data.username === username) {
@@ -3357,23 +3635,20 @@
                 }
             }
             if (!targetPeerId) {
-                showToast(`User ${username} not found. Make sure they are connected via Peer ID.`);
+                showToast(`📨 Friend request sent to ${username} (will be delivered when they come online).`);
                 return;
             }
             const conn = peerConnections[targetPeerId];
             if (!conn) {
-                showToast(`Peer ${username} is not connected.`);
+                showToast(`📨 Friend request sent to ${username} (will be delivered when they come online).`);
                 return;
             }
-            // Send friend request
             conn.send({
                 type: 'friend_request',
                 from: user.username,
                 username: user.username,
                 to: targetPeerId,
             });
-            addSentRequest(user.username, username);
-            renderInbox();
             showToast(`📨 Friend request sent to ${username}!`);
         }
 
@@ -3382,7 +3657,6 @@
             if (!user) return;
             if (addFriend(user.username, from)) {
                 removeFriendRequest(user.username, from);
-                // Notify the peer
                 for (const [pid, conn] of Object.entries(peerConnections)) {
                     const pData = peerData[pid];
                     if (pData && pData.username === from) {
@@ -3395,7 +3669,6 @@
                 renderInbox();
                 updateFriendSelect();
                 showToast(`🎉 You are now friends with ${from}!`);
-                // Broadcast new friend
                 broadcastToPeers({ type: 'new_friend', username: user.username, friend: from });
             }
         }
@@ -3404,12 +3677,10 @@
             const user = getCurrentUser();
             if (!user) return;
             removeFriendRequest(user.username, from);
-            // Notify the peer
             for (const [pid, conn] of Object.entries(peerConnections)) {
                 const pData = peerData[pid];
                 if (pData && pData.username === from) {
-                    conn.send({ type: 'friend_request_response', to: pid, accepted: false, username: user
-                            .username });
+                    conn.send({ type: 'friend_request_response', to: pid, accepted: false, username: user.username });
                     break;
                 }
             }
@@ -3422,7 +3693,6 @@
             if (peerConnections[peerId]) { showToast('Already connected to this peer.'); return; }
             const conn = peer.connect(peerId);
             setupPeerConnection(conn);
-            // Also sync leaderboard data after connection
             setTimeout(() => {
                 const user = getCurrentUser();
                 if (!user) return;
@@ -3465,15 +3735,24 @@
             updateFriendSelect();
             if (user.currentTheme) applyTheme(user.currentTheme);
             else applyTheme('default');
-            // Init PeerJS if not already
-            if (!peer) initPeerJS();
-            // Display peer ID
+            if (!peer || !isPeerReady) initPeerJS();
             const pid = getPeerId(user.username);
             if (pid) {
-                document.getElementById('peer-id-display').textContent = `📡 Your Peer ID: ${pid}`;
+                document.getElementById('peer-id-display').innerHTML =
+                    `📡 Your Peer ID: <strong style="color:var(--accent);">${pid}</strong> <span class="peer-status-badge online">Online</span> <button id="peer-refresh-btn" style="margin-left:8px;">⟳ Refresh</button>`;
+                document.getElementById('peer-refresh-btn')?.addEventListener('click', () => { initPeerJS(true); });
                 myPeerId = pid;
                 isPeerReady = true;
+            } else {
+                document.getElementById('peer-id-display').innerHTML =
+                    `📡 Loading Peer ID... <span class="peer-status-badge loading">Connecting</span> <button id="peer-refresh-btn" style="margin-left:8px;">⟳ Refresh</button>`;
+                document.getElementById('peer-refresh-btn')?.addEventListener('click', () => { initPeerJS(true); });
             }
+            document.querySelector('#profile-copy-peer-id')?.addEventListener('click', () => {
+                const pid = myPeerId || getPeerId(user.username) || '';
+                if (pid) navigator.clipboard.writeText(pid).then(() => showToast('📋 Peer ID copied!')).catch(
+                () => showToast('Peer ID: ' + pid));
+            });
         }
 
         function updatePointsDisplay() {
@@ -3514,7 +3793,6 @@
             if (hangoutCtx && hangoutCanvas) drawHangout();
         }
 
-        // ─── HOME ───
         function renderHome() {
             const grid = document.getElementById('home-game-grid');
             grid.innerHTML = '';
@@ -3583,7 +3861,6 @@
             return card;
         }
 
-        // ─── FRIENDS ───
         function renderFriends() {
             const user = getCurrentUser();
             if (!user) return;
@@ -3613,23 +3890,20 @@
                 '<div class="friend-empty">No other users found.</div>'; } else {
                 ac.innerHTML = allUsers.map(u => {
                     const isFriend = friends.includes(u);
-                    return `<div class="user-item"><span class="name clickable-name" data-username="${u}">${u}</span>${
-                    isFriend ? '<span style="color:var(--success);">✔ Friend</span>' :
-                    `<button class="add-btn" data-user="${u}">➕ Add</button>`}</div>`;
+                    const online = isUserOnline(u);
+                    const statusDot = `<span class="online-dot ${online ? 'online' : 'offline'}" title="${online ? 'Online' : 'Offline'}"></span>`;
+                    return `<div class="user-item">
+                        <span class="name clickable-name" data-username="${u}">${u} ${statusDot}</span>
+                        ${isFriend ? '<span style="color:var(--success);">✔ Friend</span>' :
+                        `<button class="add-btn" data-user="${u}">➕ Add</button>`}
+                    </div>`;
                 }).join('');
                 ac.querySelectorAll('.add-btn').forEach(btn => {
                     btn.addEventListener('click', () => {
                         const u = btn.dataset.user;
-                        // Try to send via peer
                         sendFriendRequestToPeer(u);
-                        // Also add locally if they are on same device
-                        if (addFriend(n, u)) {
-                            renderFriends();
-                            updateFriendSelect();
-                            unlockAchievement(n, 'social');
-                            if (getFriends(n).length >= 3) unlockAchievement(n, 'popular');
-                            showToast(`Added ${u} as friend!`);
-                        }
+                        renderFriends();
+                        updateFriendSelect();
                     });
                 });
                 ac.querySelectorAll('.clickable-name').forEach(el => {
@@ -3652,7 +3926,6 @@
                 sel.appendChild(opt); });
         }
 
-        // ─── INBOX ───
         function renderInbox() {
             const user = getCurrentUser();
             if (!user) return;
@@ -3689,17 +3962,17 @@
             if (sent.length === 0) {
                 sc.innerHTML = '<div class="friend-empty">No sent requests.</div>';
             } else {
-                sc.innerHTML = sent.map(u =>
-                    `<div class="inbox-item"><span class="name">${u}</span><span class="pending">⏳ Pending</span></div>`
-                    ).join('');
+                sc.innerHTML = sent.map(u => {
+                    const online = isUserOnline(u);
+                    const status = online ? ' (online)' : ' (offline)';
+                    return `<div class="inbox-item"><span class="name">${u}</span><span class="pending">⏳ Pending${status}</span></div>`;
+                }).join('');
             }
         }
 
-        // ─── LEADERBOARD ───
         function renderLeaderboard(sortBy = 'stars') {
             currentLeaderboardSort = sortBy;
             const container = document.getElementById('leaderboard-container');
-            // Build data: local users + peer data
             const allData = [];
             const localUsers = getUsers();
             for (const [name, info] of Object.entries(localUsers)) {
@@ -3708,24 +3981,21 @@
                 const gp = info.gamesPlayed || 0;
                 allData.push({ name, totalScore: ts, level: lv, gamesPlayed: gp, source: 'local' });
             }
-            // Add peer data
             for (const [pid, data] of Object.entries(peerData)) {
                 if (!data.username) continue;
-                // Avoid duplicates
                 if (allData.some(d => d.name === data.username)) continue;
                 const ts = data.totalScore || 0;
                 const lv = data.level || 1;
                 const gp = Object.keys(data.scores || {}).length;
                 allData.push({ name: data.username, totalScore: ts, level: lv, gamesPlayed: gp, source: 'peer' });
             }
-
             if (sortBy === 'level') allData.sort((a, b) => b.level - a.level);
             else if (sortBy === 'games') allData.sort((a, b) => b.gamesPlayed - a.gamesPlayed);
             else allData.sort((a, b) => b.totalScore - a.totalScore);
 
             if (allData.length === 0) {
                 container.innerHTML =
-                '<div style="color:var(--text-secondary);text-align:center;padding:16px;">No data yet. Connect with peers to see global rankings!</div>';
+                    '<div style="color:var(--text-secondary);text-align:center;padding:16px;">No data yet. Connect with peers to see global rankings!</div>';
                 return;
             }
             container.innerHTML = allData.slice(0, 30).map((entry, idx) => {
@@ -3747,7 +4017,6 @@
             });
         }
 
-        // ─── QUESTS ───
         function renderQuests(type = 'daily') {
             const container = document.getElementById('quest-container');
             const user = getCurrentUser();
@@ -3793,7 +4062,6 @@
             }).join('');
         }
 
-        // ─── ACHIEVEMENTS ───
         function renderAchievements() {
             const user = getCurrentUser();
             if (!user) return;
@@ -3843,7 +4111,6 @@
             });
         }
 
-        // ─── AVATAR ───
         function renderAvatar() {
             const user = getCurrentUser();
             if (!user) return;
@@ -3960,7 +4227,6 @@
             });
         }
 
-        // ─── PROFILE (with Peer ID) ───
         function renderProfile() {
             const user = getCurrentUser();
             if (!user) return;
@@ -3980,8 +4246,9 @@
             const card = document.getElementById('profile-card');
             if (!card) return;
             const unlockedGames = getUnlockedGames(user.username);
-            // Get Peer ID
             const peerId = myPeerId || getPeerId(user.username) || 'Not connected yet';
+            const statusClass = peerId && peerId !== 'Not connected yet' ? 'online' : 'offline';
+            const statusLabel = peerId && peerId !== 'Not connected yet' ? '✅ Online' : '⏳ Connecting...';
 
             card.innerHTML = `
                 <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;">
@@ -3990,7 +4257,9 @@
                 </div>
                 <div class="profile-peer-id">
                     <span>🔑 Peer ID: <strong style="color:var(--accent);">${peerId}</strong></span>
+                    <span class="peer-status-badge ${statusClass}">${statusLabel}</span>
                     <button class="copy-btn" id="profile-copy-peer-id">📋 Copy</button>
+                    <button id="profile-refresh-peer" style="background:var(--bg-card);border:none;color:var(--text-primary);padding:0.1em 0.6em;border-radius:6px;cursor:pointer;font-size:0.8em;">⟳</button>
                 </div>
                 <div class="profile-detail" style="padding:4px 0;border-bottom:1px solid var(--card-border);">👤 Emoji: ${avatar.character} ${emojiData ? emojiData.label : ''}</div>
                 <div class="profile-detail" style="padding:4px 0;border-bottom:1px solid var(--card-border);">🎨 Background: ${avatar.bgColor}</div>
@@ -4006,22 +4275,16 @@
                 </div>
             `;
 
-            // Copy Peer ID button
-            const copyBtn = document.getElementById('profile-copy-peer-id');
-            if (copyBtn) {
-                copyBtn.addEventListener('click', () => {
-                    const pid = myPeerId || getPeerId(user.username) || '';
-                    if (pid) {
-                        navigator.clipboard.writeText(pid).then(() => showToast('📋 Peer ID copied!'))
-                            .catch(() => showToast('Peer ID: ' + pid));
-                    } else {
-                        showToast('No Peer ID available yet.');
-                    }
-                });
-            }
+            document.getElementById('profile-copy-peer-id')?.addEventListener('click', () => {
+                const pid = myPeerId || getPeerId(user.username) || '';
+                if (pid) navigator.clipboard.writeText(pid).then(() => showToast('📋 Peer ID copied!')).catch(
+                () => showToast('Peer ID: ' + pid));
+            });
+            document.getElementById('profile-refresh-peer')?.addEventListener('click', () => {
+                initPeerJS(true);
+            });
         }
 
-        // ─── SHOP ───
         let shopTab = 'emojis';
 
         function renderShop(tab = 'emojis') {
@@ -4313,7 +4576,6 @@
             if (game && game.multiplayer) { const mp = (d.multiplayerPlayed || 0) + 1;
                 updateUserData(username, { multiplayerPlayed: mp });
                 unlockAchievement(username, 'multiplayer'); }
-            // Per-game stats
             if (gameId === 'platformer') { const coins = (d.coinCount || 0) + points / 10;
                 updateUserData(username, { coinCount: coins });
                 if (coins >= 50) unlockAchievement(username, 'coin_king'); }
@@ -4347,7 +4609,6 @@
             if (gameId === 'chess-ai') { const wins = (d.chessWins || 0) + (points > 0 ? 1 : 0);
                 updateUserData(username, { chessWins: wins });
                 if (wins >= 1) unlockAchievement(username, 'chess_master'); }
-            // Quests
             if (gameId === 'endless-runner') { const p = getQuestProgress(username, 'run_100') + points;
                 updateQuestProgress(username, 'run_100', p);
                 checkQuestCompletion(username, 'run_100', 100); }
@@ -4369,7 +4630,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  GAME ENGINE (same as original – shortened)
+        //  GAME ENGINE – FIXED for missing username references
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         let gameRunning = false,
             gameLoopId = null,
@@ -4402,9 +4663,9 @@
         function setupGame(gameId, friendName, mode = 'local', host = true) {
             const canvas = document.getElementById('game-canvas');
             const container = document.getElementById('game-container');
-            const rect = container.getBoundingClientRect();
-            const w = rect.width || container.clientWidth || 600;
-            const h = rect.height || container.clientHeight || 400;
+            // FIX: ensure canvas gets non-zero dimensions
+            const w = container.clientWidth || 600;
+            const h = container.clientHeight || 400;
             canvas.width = w;
             canvas.height = Math.max(260, h);
             canvas.style.width = '100%';
@@ -4631,13 +4892,7 @@
             onlineGameStarted = false;
         }
 
-        // ─── Minimal game implementations (all games work, but code shortened for brevity) ───
-        // Each game is a self-contained function. For this response, we include the full set
-        // but keep them concise. The original code had ~2000+ lines of game logic.
-        // We'll include placeholder implementations for brevity, but the actual full code
-        // is used in production. For this response, I'll include a few representative games
-        // and the rest as minimal working versions.
-
+        // ─── Individual game functions – fixed missing username ───
         function startStarCollector(ctx, canvas) {
             let stars = [],
                 timer = 20,
@@ -5388,7 +5643,7 @@
             showToast('🐍 Advanced Snake with power-ups!');
         }
 
-        // ─── Additional games (simplified stubs for brevity, but all work) ───
+        // ─── Flappy ───
         function startFlappy(ctx, canvas) {
             let bird = { x: 80, y: canvas.height / 2, vy: 0, size: 16 },
                 pipes = [],
@@ -5710,8 +5965,10 @@
             showToast('❓ Answer the trivia questions!');
         }
 
-        // ─── Tic-Tac-Toe vs AI ───
+        // ─── Tic-Tac-Toe vs AI (fixed username) ───
         function startTicTacToe(ctx, canvas) {
+            const user = getCurrentUser();
+            const username = user ? user.username : 'Player';
             const size = 3,
                 cs = Math.min(canvas.width, canvas.height) / size,
                 ox = (canvas.width - cs * size) / 2,
@@ -6111,8 +6368,10 @@
             showToast('🧱 Move mouse to control paddle!');
         }
 
-        // ─── Pong ───
+        // ─── Ping Pong ───
         function startPingPong(ctx, canvas) {
+            const user = getCurrentUser();
+            const username = user ? user.username : 'Player';
             const pW = 10,
                 pH = 80,
                 player = { x: 10, y: canvas.height / 2 - pH / 2, w: pW, h: pH, dy: 0 },
@@ -6639,8 +6898,10 @@
             showToast('✊ Click Rock, Paper, or Scissors!');
         }
 
-        // ─── Connect 4 vs AI ───
+        // ─── Connect 4 (vs AI) – fixed username ───
         function startConnect4(ctx, canvas) {
+            const user = getCurrentUser();
+            const username = user ? user.username : 'Player';
             const cols = 7,
                 rows = 6,
                 cs = Math.min(canvas.width / cols, (canvas.height - 40) / rows),
@@ -6764,8 +7025,10 @@
             showToast('🟡 Click a column to drop your piece!');
         }
 
-        // ─── Battleship ───
+        // ─── Battleship – fixed username ───
         function startBattleship(ctx, canvas) {
+            const user = getCurrentUser();
+            const username = user ? user.username : 'Player';
             const gs = 10,
                 cs = Math.min(canvas.width / gs, (canvas.height - 40) / gs) / 2,
                 ox1 = cs * 0.5,
@@ -7625,7 +7888,7 @@
             showToast('🦘 Arrow keys to move, jump on platforms!');
         }
 
-        // ─── Brick Breaker ───
+        // ─── Brick Breaker (just alias to Breakout) ───
         function startBrickBreaker(ctx, canvas) { startBreakout(ctx, canvas); }
 
         // ─── Stacker ───
@@ -8573,7 +8836,7 @@
             showToast('⌨️ Type the word as fast as you can!');
         }
 
-        // ─── 2P GAMES ─── (simplified stubs — all work with same logic)
+        // ─── 2P GAMES (with fix for pong2p username) ───
         function startCoopPlatformer(ctx, canvas, mode, host) {
             const p1 = { x: 40, y: canvas.height - 60, w: 25, h: 35, vy: 0, onGround: false, color: '#4a7cf7' };
             const p2 = { x: canvas.width - 80, y: canvas.height - 60, w: 25, h: 35, vy: 0, onGround: false,
@@ -8738,6 +9001,8 @@
         }
 
         function startPong2P(ctx, canvas, mode, host) {
+            const user = getCurrentUser();
+            const username = user ? user.username : 'Player';
             const pW = 10,
                 pH = 80,
                 p1 = { x: 10, y: canvas.height / 2 - pH / 2, w: pW, h: pH, dy: 0 },
@@ -10531,7 +10796,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  UI EVENT BINDINGS
+        //  UI EVENT BINDINGS (same as before)
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         document.getElementById('challenge-btn').addEventListener('click', () => {
             const sel = document.getElementById('friend-select');
@@ -10541,7 +10806,6 @@
             launchGame('friend-duel', friend, 'local');
         });
 
-        // ─── PARTY ───
         document.getElementById('party-invite-btn').addEventListener('click', () => {
             const input = document.getElementById('party-invite-input');
             const name = input.value.trim();
@@ -10580,7 +10844,6 @@
             if (e.key === 'Enter') document.getElementById('party-chat-send').click();
         });
 
-        // ─── QUESTS TABS ───
         document.getElementById('quest-tab-daily').addEventListener('click', () => {
             document.getElementById('quest-tab-daily').style.opacity = '1';
             document.getElementById('quest-tab-weekly').style.opacity = '0.5';
@@ -10592,7 +10855,6 @@
             renderQuests('weekly');
         });
 
-        // ─── LEADERBOARD TABS ───
         document.getElementById('lb-tab-stars').addEventListener('click', () => {
             document.getElementById('lb-tab-stars').style.opacity = '1';
             document.getElementById('lb-tab-level').style.opacity = '0.5';
@@ -10612,7 +10874,6 @@
             renderLeaderboard('games');
         });
 
-        // ─── SHOP TABS ───
         document.getElementById('shop-tab-emojis').addEventListener('click', () => {
             shopTab = 'emojis';
             document.getElementById('shop-tab-emojis').style.opacity = '1';
@@ -10635,7 +10896,6 @@
             renderShop('themes');
         });
 
-        // ─── PEER CONNECT ───
         document.getElementById('peer-connect-btn').addEventListener('click', () => {
             const input = document.getElementById('peer-connect-input');
             const pid = input.value.trim();
@@ -10652,7 +10912,10 @@
                 'Peer ID: ' + pid));
         });
 
-        // ─── FIND USER ───
+        document.getElementById('peer-refresh-btn')?.addEventListener('click', () => {
+            initPeerJS(true);
+        });
+
         document.getElementById('find-user-btn').addEventListener('click', () => {
             const input = document.getElementById('find-user-input');
             const username = input.value.trim();
@@ -10661,12 +10924,13 @@
             if (!user) return;
             const allUsers = Object.keys(getUsers());
             if (allUsers.includes(username)) {
+                const online = isUserOnline(username);
+                const statusDot = `<span class="online-dot ${online ? 'online' : 'offline'}" title="${online ? 'Online' : 'Offline'}"></span>`;
                 document.getElementById('find-user-result').innerHTML =
-                    `✅ User found: <span class="clickable-name" data-username="${username}">${username}</span>`;
+                    `✅ User found: <span class="clickable-name" data-username="${username}">${username}</span> ${statusDot}`;
                 document.querySelector('#find-user-result .clickable-name').addEventListener('click', () => {
                     showProfileModal(username);
                 });
-                // Also show send friend request option
                 const friends = getFriends(user.username);
                 if (friends.includes(username)) {
                     document.getElementById('find-user-result').innerHTML += ` — Already friends ✓`;
@@ -10687,7 +10951,6 @@
             input.value = '';
         });
 
-        // ─── GAME BACK ───
         document.getElementById('game-back-btn').addEventListener('click', () => {
             if (currentPage === 'gameplay') { stopGame();
                 showPage('games'); }
@@ -10744,7 +11007,7 @@
             showPage('home'); });
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  HANGOUT (same as original)
+        //  HANGOUT (unchanged)
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         let hangoutCtx = null,
             hangoutCanvas = null,
@@ -10994,8 +11257,6 @@
             onlineGameStarted = false,
             onlineGameDataHandler = null;
 
-        function initPeerJS() {}
-
         function showLobby(gameId) {
             lobbyGameId = gameId;
             const modal = document.getElementById('lobby-modal');
@@ -11069,7 +11330,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  PARTY SYSTEM (BroadcastChannel)
+        //  PARTY SYSTEM (unchanged)
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         let partyMembers = [],
             partyChatMessages = [],
@@ -11129,7 +11390,7 @@
         }
 
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        //  AUTH
+        //  AUTH (unchanged)
         // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
         const authScreen = document.getElementById('auth-screen'),
             mainApp = document.getElementById('main-app'),
@@ -11261,8 +11522,7 @@
                 }
                 if (user.currentTheme) applyTheme(user.currentTheme);
                 else applyTheme('default');
-                // Initialize PeerJS after login
-                if (!peer) setTimeout(initPeerJS, 300);
+                if (!peer || !isPeerReady) initPeerJS();
             }
             updateHangoutAvatar();
         }
